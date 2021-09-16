@@ -1,3 +1,5 @@
+<img scr="https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/GEM_logo.jpg" alt="GEM Programming Ltd Logo" width="100"/>
+
 # SAS!...R(aaah), Saviours of the Data Vis
 
 This repository contains supplementary materials for a poster presented at PHUSE EU CONNECT 2021 (number PP12). Here you will find the SAS programs and R scripts which created the plots considered as well as high resolution versions of the outputs.
