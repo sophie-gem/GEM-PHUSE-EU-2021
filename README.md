@@ -29,9 +29,9 @@ For your convenience, provided below are the links which will take you to the re
 
 **SAS Programs and Outputs**
 - Laboratory Boxplots &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Program]() &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Output]()
-- KM Plot &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Program]() &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Output]()
+- KM Plot &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Program](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/km_curve.sas) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Output](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/km_curve_SAS.png)
 
 **R Scripts and Outputs**
 - Laboratory Boxplots &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Program](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/lab_boxplots2.R) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Output](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/anim_bxplt_poster.gif)
-- KM Plot &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Program](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/km_curve2.R) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Output](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/km_poster.png)
+- KM Plot &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Program](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/km_curve.R) &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [Output](https://github.com/sophie-gem/GEM-PHUSE-EU-2021/blob/main/km_curve_R.png)
 
