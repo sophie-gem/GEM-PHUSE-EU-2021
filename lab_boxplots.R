@@ -67,7 +67,7 @@ plot_theme <- theme(text = element_text(family='sans', face='plain'),
                     
                     plot.title = element_text(face='bold', size=9, hjust=0.5),
                     plot.tag = element_text(face='bold', size=7),
-                    plot.tag.position = c(0.1, 1),
+                    plot.tag.position = c(0.09, 1),
                     plot.background = element_rect(colour = 'whitesmoke', fill='ghostwhite'),
                     plot.caption = element_text(family = "sans", face = "italic", size = 7, hjust=0),
                     plot.caption.position = "plot",
@@ -80,16 +80,17 @@ plot_theme <- theme(text = element_text(family='sans', face='plain'),
                     legend.key = element_rect(fill=NA),
                     legend.key.size = unit(0.02, 'npc'),
                     legend.background = element_rect(colour='whitesmoke'),
-                    legend.text = element_text(size=7),
-                    legend.title = element_text(size=9),
+                    legend.text = element_text(size=6),
+                    legend.title = element_text(size=7),
                     legend.margin = margin(rep(2, 4)),
                     legend.position = 'bottom',
   
-                    axis.text = element_text(size=7),
-                    axis.title = element_text(size=9),
+                    axis.text = element_text(size=6),
+                    axis.title = element_text(size=7),
                     axis.ticks = element_line(colour='#B0B7BB'),
                     
-                    strip.background = element_rect(fill="#FAFBFE", colour="#B0B7BB"))
+                    strip.background = element_rect(fill="#FAFBFE", colour="#B0B7BB"),
+                    strip.text = element_text(size=7))
 
 ################################################################################
 
