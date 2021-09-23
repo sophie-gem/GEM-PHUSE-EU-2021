@@ -58,13 +58,13 @@ plot_theme <- theme(text = element_text(family='sans', face='plain'),
                     legend.key = element_rect(fill=NA),
                     legend.key.size = unit(0.02, 'npc'),
                     legend.background = element_rect(colour='whitesmoke'),
-                    legend.text = element_text(size=7),
-                    legend.title = element_text(size=9),
+                    legend.text = element_text(size=6),
+                    legend.title = element_text(size=7),
                     legend.margin = margin(rep(2, 4)),
                     legend.position = 'bottom',
                     
-                    axis.text = element_text(size=7),
-                    axis.title = element_text(size=9),
+                    axis.text = element_text(size=6),
+                    axis.title = element_text(size=7),
                     axis.ticks = element_line(colour='#B0B7BB'),
                     
                     strip.background = element_rect(fill="#FAFBFE", colour="#B0B7BB"))
@@ -110,14 +110,14 @@ surv_plot <- ggsurvplot(km_data,
                         title="Kaplan-Meier Survival Curve",
                         ylab="Probability of Survival",
                         xlab="Days to Event",
-                        legend=c(0.85, 0.85),
+                        legend=c(0.9, 0.9),
                         legend.title="Planned Treatment",
                         legend.labs=c("Treatment A", "Treatment B"),
                         censor.shape=16,
                         censor.size=1,
                         tables.col="strata",
                         risk.table.y.text.col=TRUE,
-                        fontsize=2.5
+                        fontsize=2
                         )
 						
 
@@ -149,7 +149,7 @@ event_tbl <- ggsurvtable(fit=surv_plot$data.survtable,
                                  panel.grid = element_blank(),
                                  plot.background = element_rect(colour=NA),
                                  legend.position = "none"),
-                         fontsize=2.5,
+                         fontsize=2,
                          legend.labs=c("Treatment A", "Treatment B"),
                          tables.height=0.1
                          )
@@ -181,7 +181,7 @@ evt_tbl <- ggplotGrob(event_tbl)
 final <- arrangeGrob(plt, 
                      rsk_tbl,
                      evt_tbl,
-                     heights = c(4, 1, 1))
+                     heights = c(5, 1, 1))
 
 #####################
 ### save the plot ###
