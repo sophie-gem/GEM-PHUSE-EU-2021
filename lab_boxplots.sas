@@ -7,7 +7,7 @@
 **   Program name           : lab_boxplots.sas                                            **;
 **   Description            : Creating animated boxplots (for the liver function tests)   **;
 **                                                                                        **;
-**   Input dataset(s)       : adlb                                                        **;
+**   Input dataset(s)       : ADLB                                                        **;
 **                                                                                        **;
 **   Output dataset(s)      : -                                                           **;
 **                                                                                        **;

@@ -4,10 +4,10 @@
 **   Sponsor                : GEM Programming Solutions                                   **;
 **   Study                  : Test Study                                                  **;
 **                                                                                        **;
-**   Program name           : km.sas                                                      **;
+**   Program name           : km_curve.sas                                                **;
 **   Description            : Creating a Kaplan-Meier Curve                               **;
 **                                                                                        **;
-**   Input dataset(s)       : adsl  sandbox.trtmt_attr                                    **;
+**   Input dataset(s)       : ADTTE                                                       **;
 **                                                                                        **;
 **   Output dataset(s)      : -                                                           **;
 **                                                                                        **;
@@ -51,6 +51,7 @@ length id   value fillcolor markersymbol markercolor linecolor textcolor $20 fil
 run;
 
 /* selecet ODS output dataset names for the proc lifetest */
+ods graphics on;
 ods output Survivalplot = SurvivalPlotData; /* data for KM plot **/
 ods output homtests=tests;                  /* p-value */
 ods output quartiles=quartiles;             /* median survival time for reflines*/
@@ -116,7 +117,7 @@ footnote;
 
 /* set ODS output destination and set options */
 ods listing gpath="&_root.\gemprogramming.com\GEM Dev - Documents\Standard code library\Poster-2021\Outputs\";
-ods graphics / imagemap = on noborder width =  25.94cm  height = 19.59cm imagefmt=png imagename='km';
+ods graphics / imagemap = on noborder width =  25.94cm  height = 19.59cm imagefmt=png imagename='km_curve_SAS';
 ods pdf style = gem_plot file = "&_root.\gemprogramming.com\GEM Dev - Documents\Standard code library\Poster-2021\Outputs\km_curve_SAS.pdf" nogtitle nogfootnote;
 ods output SGPlot = work.sgplot_output_data;
 
