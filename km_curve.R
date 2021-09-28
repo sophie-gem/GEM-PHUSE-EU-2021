@@ -43,11 +43,11 @@ head(adtte); dim(adtte)
 ######################
 plot_theme <- theme(text = element_text(family='sans', face='plain'),
                     
-                    plot.title = element_text(face='bold', size=9, hjust=0.5),
-                    plot.tag = element_text(face='bold', size=7),
+                    plot.title = element_text(face='bold', size=6, hjust=0.5),
+                    plot.tag = element_text(face='bold', size=5),
                     plot.tag.position = "topleft",
                     plot.background = element_rect(colour = 'whitesmoke', fill='ghostwhite'),
-                    plot.caption = element_text(family = "sans", face = "italic", size = 7, hjust=0),
+                    plot.caption = element_text(family = "sans", face = "italic", size = 4, hjust=0),
                     plot.caption.position = "plot",
                     
                     panel.background = element_rect(fill='whitesmoke', colour=NA),
@@ -58,13 +58,13 @@ plot_theme <- theme(text = element_text(family='sans', face='plain'),
                     legend.key = element_rect(fill=NA),
                     legend.key.size = unit(0.02, 'npc'),
                     legend.background = element_rect(colour='whitesmoke'),
-                    legend.text = element_text(size=6),
-                    legend.title = element_text(size=7),
+                    legend.text = element_text(size=4),
+                    legend.title = element_text(size=4),
                     legend.margin = margin(rep(2, 4)),
                     legend.position = 'bottom',
                     
-                    axis.text = element_text(size=6),
-                    axis.title = element_text(size=7),
+                    axis.text = element_text(size=4),
+                    axis.title = element_text(size=5),
                     axis.ticks = element_line(colour='#B0B7BB'),
                     
                     strip.background = element_rect(fill="#FAFBFE", colour="#B0B7BB"))
@@ -87,10 +87,10 @@ surv_plot <- ggsurvplot(km_data,
                         surv.median.line="hv", 
                         pval=TRUE,
                         pval.method = TRUE,
-                        pval.method.coord = c(0.02, 0.14),
-                        pval.method.size=2.1,
-                        pval.size = 2,
-                        pval.coord = c(0.02, 0.1),
+                        pval.method.coord = c(0.07, 0.05),
+                        pval.method.size=1.5,
+                        pval.size = 1.5,
+                        pval.coord = c(7, 0.05),
                         tables.height=0.1,
                         size=0.3,
                         ggtheme=plot_theme + 
@@ -100,24 +100,26 @@ surv_plot <- ggsurvplot(km_data,
                                 axis.ticks = element_blank(),
                                 panel.background = element_blank(),
                                 axis.title=element_blank(),
-                                axis.text = element_text(size=6),
+                                axis.text = element_text(size=4),
                                 plot.title = element_text(hjust=0, 
                                                           face="italic", 
-                                                          size=7),
+                                                          size=5),
                                 panel.grid = element_blank(),
                                 plot.background = element_rect(colour=NA),
+                                plot.margin = unit(c(0, 0.2, 0.1, 0.2), 
+                                                   units = "cm"),
                                 legend.position = "none"),
                         title="Kaplan-Meier Survival Curve",
                         ylab="Probability of Survival",
                         xlab="Days to Event",
-                        legend=c(0.9, 0.9),
+                        legend=c(0.825, 0.925),
                         legend.title="Planned Treatment",
                         legend.labs=c("Treatment A", "Treatment B"),
                         censor.shape=16,
-                        censor.size=1,
+                        censor.size=0.7,
                         tables.col="strata",
                         risk.table.y.text.col=TRUE,
-                        fontsize=2
+                        fontsize=1.5
                         )
 						
 
@@ -135,21 +137,22 @@ event_tbl <- ggsurvtable(fit=surv_plot$data.survtable,
                          palette = c("mediumseagreen", "cornflowerblue"),
                          color = "TRT01P",
                          tables.height=0.1,
-                         size=0.3,
                          ggtheme=plot_theme + theme(legend.position="none"),
                          tables.theme=plot_theme +
                            theme(axis.text.x = element_blank(), 
                                  axis.ticks = element_blank(),
                                  panel.background = element_blank(),
                                  axis.title=element_blank(),
-                                 axis.text = element_text(size=6),
+                                 axis.text = element_text(size=4),
                                  plot.title = element_text(hjust=0, 
                                                            face="italic", 
-                                                           size=7),
+                                                           size=5),
                                  panel.grid = element_blank(),
                                  plot.background = element_rect(colour=NA),
+                                 plot.margin = unit(c(0, 0.2, 0, 0.2), 
+                                                    units = "cm"),
                                  legend.position = "none"),
-                         fontsize=2,
+                         fontsize=1.5,
                          legend.labs=c("Treatment A", "Treatment B"),
                          tables.height=0.1
                          )
@@ -158,11 +161,13 @@ event_tbl <- ggsurvtable(fit=surv_plot$data.survtable,
 ### geom_tile creates a border for the p-value; geom_text displays the median values at the appropriate places ###
 ### near the reference lines; labs adds the GEM Test Study header to the plot                                  ###
 plt_ext <- surv_plot$plot + 
-  labs(tag = "GEM Test Study") + 
+  labs(tag = "GEM Test Study") +
+  guides(colour=guide_legend(nrow=1)) +
   theme(plot.tag.position = c(0.1, 1), 
-        plot.margin = unit(c(0.2, 0.2, 0.2, 0.5), 
-                           units = "cm")) + 
-  geom_tile(data=data.frame(x=2.5, y=0.115, w=7, h=0.1), 
+        plot.margin = unit(c(0.2, 0.2, 0.0, 0.4), 
+                           units = "cm"),
+        axis.ticks = element_line(colour='#B0B7BB')) + 
+  geom_tile(data=data.frame(x=7.04, y=0.05, w=14.2, h=0.06), 
             aes(x=x, y=y, width=w, height=h), 
             colour="black",
             fill=NA,
@@ -170,7 +175,7 @@ plt_ext <- surv_plot$plot +
   geom_text(data=attr(surv_plot$data.survplot, "table"), 
             aes(x=median, y=0, label=round(median, 0)),
             nudge_x =1.5,
-            size=2)
+            size=1.5)
 
 ### creates three grobs (grid graphical objects) from the plot and two tables in order to arrange onto one page ###
 plt <- ggplotGrob(plt_ext)
@@ -181,7 +186,7 @@ evt_tbl <- ggplotGrob(event_tbl)
 final <- arrangeGrob(plt, 
                      rsk_tbl,
                      evt_tbl,
-                     heights = c(5, 1, 1))
+                     heights = c(5, 0.8, 0.8))
 
 #####################
 ### save the plot ###
@@ -189,8 +194,8 @@ final <- arrangeGrob(plt,
 ggsave(plot=final, 
        filename=paste0(Sys.getenv("CLIENT_PATH"), 
                        "\\Poster-2021\\Outputs\\km_curve_R.png"), 
-       width = 5, 
-       height = 3.75, 
+       width = 3, 
+       height = 2.75, 
        units = "in")
 
 ################################################################################

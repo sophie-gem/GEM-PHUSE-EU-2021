@@ -171,7 +171,7 @@ proc sgplot data        = survivalplotdata_2
    titleattrs=(family=arial style=italic weight=bold)
    valueattrs=(size=9); 
 
-   keylegend 's' / location = inside position = topright title = "Actual Treatment" sortorder = ascending linelength = 20;
+   keylegend 's' / location = inside position = topright title = "Planned Treatment" sortorder = ascending linelength = 20;
 run;
 title;
 

@@ -65,11 +65,11 @@ head(data_means)
 ######################
 plot_theme <- theme(text = element_text(family='sans', face='plain'),
                     
-                    plot.title = element_text(face='bold', size=9, hjust=0.5),
-                    plot.tag = element_text(face='bold', size=7),
+                    plot.title = element_text(face='bold', size=7, hjust=0.5),
+                    plot.tag = element_text(face='bold', size=6),
                     plot.tag.position = c(0.09, 1),
                     plot.background = element_rect(colour = 'whitesmoke', fill='ghostwhite'),
-                    plot.caption = element_text(family = "sans", face = "italic", size = 7, hjust=0),
+                    plot.caption = element_text(family = "sans", face = "italic", size = 6, hjust=0),
                     plot.caption.position = "plot",
   
                     panel.background = element_rect(fill='whitesmoke', colour='#B0B7BB'),
@@ -81,16 +81,16 @@ plot_theme <- theme(text = element_text(family='sans', face='plain'),
                     legend.key.size = unit(0.02, 'npc'),
                     legend.background = element_rect(colour='whitesmoke'),
                     legend.text = element_text(size=6),
-                    legend.title = element_text(size=7),
-                    legend.margin = margin(rep(2, 4)),
+                    legend.title = element_text(size=6),
+                    legend.margin = margin(rep(3, 4)),
                     legend.position = 'bottom',
   
-                    axis.text = element_text(size=6),
-                    axis.title = element_text(size=7),
+                    axis.text = element_text(size=5),
+                    axis.title = element_text(size=6),
                     axis.ticks = element_line(colour='#B0B7BB'),
                     
                     strip.background = element_rect(fill="#FAFBFE", colour="#B0B7BB"),
-                    strip.text = element_text(size=7))
+                    strip.text = element_text(size=6))
 
 ################################################################################
 
@@ -99,25 +99,26 @@ plot_theme <- theme(text = element_text(family='sans', face='plain'),
 #######################
 plot <- ggplot(data=final, 
                aes(as.factor(ADY), AVAL, fill=TRT01A, colour=TRT01A)) + 
-  geom_boxplot(notch=TRUE, 
+  geom_boxplot(notch=TRUE,
+               width=0.5,
                alpha=0.5, 
-               position=position_dodge(width=0.9), 
+               position=position_dodge(width=0.6), 
                key_glyph=draw_key_rect)  +
   stat_boxplot(geom="errorbar", 
                width=0.2, 
-               position=position_dodge(width=0.9), 
+               position=position_dodge(width=0.6), 
                show.legend = FALSE) +
   geom_point(data=data_means, 
              aes(as.factor(ADY), MEANS, fill=TRT01A), 
              shape=21, 
              colour="grey47",
-             position=position_dodge(width=0.9), 
+             position=position_dodge(width=0.6), 
              show.legend = FALSE) +
   geom_line(data=data_means, 
             aes(as.factor(ADY), MEANS, group=TRT01A), 
             colour="blue", 
             alpha=0.6,
-            position=position_dodge(width=0.9), 
+            position=position_dodge(width=0.6), 
             show.legend = FALSE) + 
   facet_wrap(vars(PARAM))
 
